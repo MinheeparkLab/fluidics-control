@@ -1,5 +1,6 @@
 import ctypes
 from valves.cnc_talk import MockCNC
+import os
 #import cnc_talk
 
 # class XYZ(cnc_talk.MockCNC):
@@ -7,14 +8,20 @@ class XYZ(MockCNC):
     def __init__(self, device=b"/dev/ttyACM0", config=r"./valves/XYZ_layout.json"):   # changed device="/dev/ttyACM0",  to device=b"/dev/serial" for python3
     # def __init__(self, device="/dev/ttyACM0", config=r"./valves/VWR_Plate_Lid.json"):
         self.status = ("Initializing", False)
-        self.mm = ctypes.CDLL("./libminimover.so")
+        self.mm = ctypes.CDLL("./libminimover.so")               
         self.device = device
         self.restore_config(config) #  
-        print('sending home')
+        print('requesting home')
         self.home()  # doesn't actually home 
 
     def home(self):
-        self.mm._Z4homePc(ctypes.c_char_p(self.device))
+        print('sending home')
+        # self.mm._Z4homePc(ctypes.c_char_p(self.device))  # This "Home" command doesn't work for some reason
+        os.system('~/code/localCode/miniMover/miniMoverConsole/minimover -h') # This "home command does work". 
+        self.mm._Z3jogPciii(ctypes.c_char_p(self.device), ctypes.c_int(20), ctypes.c_int(20), ctypes.c_int(90))
+        
+        
+        # in linux, in command line, nm -D ./libminimover.so to see all the features   On windows CMD $DUMPBIN -EXPORTS X.DLL
         self.current_position = (0,0,0)
         print(self.current_position)
         print(self.device)
