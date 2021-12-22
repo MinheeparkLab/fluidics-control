@@ -31,7 +31,7 @@ class GRBL(MockCNC):  # see cnc_talk.MockCNC
     # Wake up grbl
     def wakeUp(self):
         self.sendCommand('\r\n\r\n')
-        time.sleep(2)   # Wait for grbl to initialize
+        time.sleep(10)   # Wait for grbl to initialize
         self.serial.flushInput()  # Flush startup text in serial input
         print('MESSAGE -- GRBL woke up.')
         self.sendCommand('$H') # homing

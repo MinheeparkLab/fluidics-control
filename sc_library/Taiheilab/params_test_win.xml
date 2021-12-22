@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settings>
+  <!-- Valve parameters -->
+  <valves_com_port type="string">COM5</valves_com_port> <!-- COM port of serial connection to valves -->
+
+  <!-- Pump parameters -->
+  <pump_com_port type="string">COM6</pump_com_port><!-- COM port of serial connection to pump -->
+  <pump_ID type="int">30</pump_ID><!-- ID of Pump -->
+
+  <!-- coordinate parameters -->
+  <coordinatefile type="string">./96wellpos.txt</coordinatefile><!-- xy position of 96 well -->
+  <WASHX type="string">X100</WASHX><!-- x position of wash buffer -->
+  <BLEACHX type="string">X100</BLEACHX><!-- x position of bleach buffer -->
+  <IMAGINGX type="string">X100</IMAGINGX><!-- x position of imagin buffer -->
+  <WASHY type="string">Y38</WASHY><!-- y position of wash buffer -->
+  <BLEACHY type="string">Y73</BLEACHY><!-- y position of bleach buffer -->
+  <IMAGINGY type="string">Y110</IMAGINGY><!-- y position of imagin buffer -->
+
+
+  <!-- protocol parameters -->
+  <FLOWSPEED type="float">20</FLOWSPEED><!-- how fast you want to flow [rpm] -->
+  <FLOWTIME type="float">1</FLOWTIME><!-- how log you want to flow [sec] -->
+
+  <!-- protocol parameters for ORCA imaging time: 16+/-1 min -->
+  <hybtime type="float">0.1</hybtime><!-- how long you need to wait for the hybridization [sec] -->
+  <waitingtime_wash type="float">0.1</waitingtime_wash><!-- how long you need to wait after wash buffer [sec] -->
+  <waitingtime_bleach type="float">0.1</waitingtime_bleach><!-- how long you need to wait after bleach buffer [sec] -->
+  <waitingtime_imaging type="float">0.1</waitingtime_imaging><!-- how long you need to wait after imagin buffer [sec] -->
+  <imagingtime type="float">0.1</imagingtime><!-- how long you need to wait until image aquisition [sec] -->
+</settings>

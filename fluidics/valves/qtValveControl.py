@@ -179,19 +179,19 @@ class StandAlone(QtWidgets.QMainWindow):
         super(StandAlone, self).__init__(parent)
 
         # Scroll area widget contents - layout
-        self.scrollLayout = QtGui.QVBoxLayout()
+        self.scrollLayout = QtWidgets.QVBoxLayout()
 
         # Scroll area widget contents
-        self.scrollWidget = QtGui.QWidget()
+        self.scrollWidget = QtWidgets.QWidget()
         self.scrollWidget.setLayout(self.scrollLayout)
 
         # Scroll area
-        self.scrollArea = QtGui.QScrollArea()
+        self.scrollArea = QtWidgets.QScrollArea()
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setWidget(self.scrollWidget)
 
         # Main layout
-        self.mainLayout = QtGui.QVBoxLayout()
+        self.mainLayout = QtWidgets.QVBoxLayout()
 
         # Add all main to the main vLayout
         self.mainLayout.addWidget(self.scrollArea)
@@ -206,7 +206,7 @@ class StandAlone(QtWidgets.QMainWindow):
         self.scrollLayout.addStretch(1)
         
         # Central widget
-        self.centralWidget = QtGui.QWidget()
+        self.centralWidget = QtWidgets.QWidget()
         self.centralWidget.setLayout(self.mainLayout)
 
         # Set central widget

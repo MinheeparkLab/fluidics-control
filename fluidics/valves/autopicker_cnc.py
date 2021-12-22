@@ -10,7 +10,9 @@ class CNC(MockAutopicker):
         self.status = ("Initializing", False)
         # self.dev = usb.core.find(idVendor=idVendor, idProduct=idProduct)
         import usb.backend.libusb0
-        backend = usb.backend.libusb0.get_backend(find_library=lambda x: r'./windows_dll/libusb0.dll')
+        import usb.backend.libusb1 as libusb1
+        backend = libusb1.get_backend()
+        #backend = usb.backend.libusb0.get_backend(find_library=lambda x: r'./windows_dll/libusb0.dll')
         self.dev = usb.core.find(idVendor=idVendor, idProduct=idProduct, backend=backend)
         if self.dev:
             self.dev.set_configuration()

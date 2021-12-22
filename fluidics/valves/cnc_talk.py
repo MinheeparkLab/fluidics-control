@@ -8,7 +8,7 @@ import math
 
 import matplotlib.tri
 
-import valves.cnc_commands
+from valves import cnc_commands
 
 
 

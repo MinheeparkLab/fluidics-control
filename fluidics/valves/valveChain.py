@@ -58,9 +58,9 @@ class ValveChain(QtWidgets.QWidget):
 
         # Create instance of Valve class
         print(valve_type)
-        if valve_type == 'Simulated' or self.com_port < 0 or num_simulated_valves > 0:
+        if valve_type == 'Simulated' or num_simulated_valves > 0:
             print('simulating valves')
-            self.valve_chain = HamiltonMVP(com_port = 0,
+            self.valve_chain = HamiltonMVP(#com_port = 0,
 				   num_simulated_valves = num_simulated_valves,
 				   verbose = self.verbose)
 
@@ -88,12 +88,13 @@ class ValveChain(QtWidgets.QWidget):
         elif usb_cnc == 'simulated':
             self.cnc = MockAutopicker()
         else:
-            cnc_vendor_product = usb_cnc.split(",")         # for backwards compatibility, worth updating this later 
+            cnc_vendor_product = [int(i) for i in usb_cnc.split(",")]         # for backwards compatibility, worth updating this later
+
             self.cnc = CNC(cnc_vendor_product[0], cnc_vendor_product[1])
                     
 
         # Create QtValveControl widgets for each valve in the chain
-        self.num_valves = self.valve_chain.howManyValves()
+        self.num_valves = self.valve_chain.howManyValves() if self.valve_chain is not None else 0
         self.valve_names = []
         self.valve_widgets = []
         
@@ -260,10 +261,14 @@ class StandAlone(QtWidgets.QMainWindow):
     def __init__(self, parent = None):
         super(StandAlone, self).__init__(parent)
 
+
+
         # scroll area widget contents - layout
-        self.valve_chain = ValveChain(COM_port = 2,
+        self.valve_chain = ValveChain(com_port = '/dev/cu.usbserial-14420', #2,
                                       verbose = True,
-                                      num_simulated_valves = 2)
+                                      valve_type='None',
+                                      usb_cnc = 'GRBL',)
+                                      #num_simulated_valves = 2)
         
         # central widget
         self.centralWidget = QtWidgets.QWidget()
