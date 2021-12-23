@@ -15,8 +15,8 @@ import sys
 import time
 from PyQt5 import QtCore, QtGui, QtNetwork, QtWidgets
 
-from storm_control.sc_library.tcpMessage import TCPMessage
-import storm_control.sc_library.tcpCommunications as tcpCommunications
+from sc_library.tcpMessage import TCPMessage
+import sc_library.tcpCommunications as tcpCommunications
 
 
 class TCPClient(QtCore.QObject, tcpCommunications.TCPCommunicationsMixin):

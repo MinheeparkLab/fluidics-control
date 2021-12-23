@@ -15,7 +15,7 @@
 import sys
 import time
 
-from storm_control.fluidics.valves.valve import AbstractValve
+from valves.valve import AbstractValve
 
 # ----------------------------------------------------------------------------------------
 # HamiltonMVP Class Definition
@@ -168,7 +168,7 @@ class HamiltonMVP(AbstractValve):
                 
             return response[1]
         else: ## simulation code
-            self.current_port[valve_ID] = port_ID
+            self.current_port[valve_ID] = port_ID[-1]
             return True
 
     # ------------------------------------------------------------------------------------
@@ -320,7 +320,7 @@ class HamiltonMVP(AbstractValve):
     def isValidPort(self, valve_ID, port_ID):
         if not self.isValidValve(valve_ID):
             return False
-        elif not (port_ID < self.max_ports_per_valve[valve_ID]):
+        elif not (port_ID[-1] < self.max_ports_per_valve[valve_ID]):
             if self.verbose:
                 print(str(port_ID) + " is not a valid port on valve " + str(valve_ID))
             return False

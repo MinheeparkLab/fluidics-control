@@ -1,0 +1,1857 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<kilroy_configuration>
+  <kilroy_protocols>
+
+        <protocol name = "Test Protocol 1">
+        <pump duration = "1">0.6 mL/min</pump>
+        <valve duration = "10">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "10">Wash Buffer</valve>
+        <pump duration = "120">0.6 mL/min</pump>
+        <pump duration = "10">Stop Flow</pump>
+        </protocol>    
+
+
+     <protocol name = "Flow Imaging Buffer">
+        <valve duration = "10">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+	    <pump duration = "100">Stop Flow</pump>
+     </protocol>    
+ 
+     <protocol name = "Flow Wash Buffer">
+	    <pump duration = "4">Stop Flow</pump>
+        <valve duration = "10">Wash Buffer</valve>
+        <pump duration = "120">0.6 mL/min</pump>
+	    <pump duration = "10">Stop Flow</pump>
+     </protocol>  
+         
+    <protocol name = "Bleaching">
+	    <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+	    <pump duration = "100">Stop Flow</pump>
+    </protocol>
+
+    <protocol name = "Hybridize 1">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 1</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 2">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 2</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 3">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 3</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 4">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 4</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 5">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 5</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 6">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 6</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 7">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 7</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 8">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 8</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 9">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 9</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 10">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 10</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 11">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 11</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 12">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 12</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 13">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 13</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 14">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 14</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 15">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 15</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 16">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 16</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 17">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 17</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 18">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 18</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 19">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 19</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 20">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 20</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 21">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 21</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 22">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 22</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 23">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 23</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 24">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 24</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 25">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 25</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 26">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 26</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 27">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 27</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 28">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 28</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 29">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 29</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 30">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 30</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 31">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 31</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 32">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 32</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 33">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 33</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 34">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 34</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 35">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 35</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 36">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 36</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 37">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 37</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 38">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 38</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 39">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 39</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 40">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 40</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 41">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 41</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 42">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 42</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 43">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 43</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 44">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 44</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 45">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 45</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 46">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 46</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 47">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 47</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 48">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 48</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 49">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 49</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 50">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 50</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 51">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 51</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 52">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 52</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 53">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 53</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 54">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 54</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 55">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 55</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 56">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 56</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 57">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 57</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 58">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 58</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 59">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 59</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 60">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 60</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 61">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 61</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 62">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 62</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 63">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 63</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 64">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 64</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 65">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 65</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 66">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 66</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 67">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 67</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 68">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 68</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 69">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 69</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 70">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 70</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 71">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 71</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 72">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 72</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 73">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 73</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 74">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 74</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 75">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 75</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 76">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 76</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 77">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 77</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 78">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 78</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 79">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 79</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 80">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 80</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 81">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 81</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 82">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 82</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 83">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 83</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 84">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 84</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 85">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 85</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 86">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 86</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 87">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 87</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 88">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 88</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 89">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 89</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 90">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 90</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 91">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 91</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 92">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 92</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 93">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 93</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 94">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 94</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 95">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 95</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+    <protocol name = "Hybridize 96">
+        <pump duration = "4">Stop Flow</pump>
+        <valve duration = "4">Set Hyb 96</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "900">Speed 1</pump>
+        <valve duration = "4">Wash Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+
+        <pump duration = "30">Stop Flow</pump>
+        <valve duration = "4">Bleach Buffer</valve>
+        <pump duration = "140">0.6 mL/min</pump>
+        <pump duration = "50">Stop Flow</pump>
+        <valve duration = "4">Imaging Buffer</valve>
+        <pump duration = "35">0.6 mL/min</pump>
+        <pump duration = "100">Stop Flow</pump>
+    </protocol>
+     
+
+     <protocol name = "Test">
+        <pump duration = "1">0.6 mL/min</pump>
+        <valve duration = "15">Set Hyb 1</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 2</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 3</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 4</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 5</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 6</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 7</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 8</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 9</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 10</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 11</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 12</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 13</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 14</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 15</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 16</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 17</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 18</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 19</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 20</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 21</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 22</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 23</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 24</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 25</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 26</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 27</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 28</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 29</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 30</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 31</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 32</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 33</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 34</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 35</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 36</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 37</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 38</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 39</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 40</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 41</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 42</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 43</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 44</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 45</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 46</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 47</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 48</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 49</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 50</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 51</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 52</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 53</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 54</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 55</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 56</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 57</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 58</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 59</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 60</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 61</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 62</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 63</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 64</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 65</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 66</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 67</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 68</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 69</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 70</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 71</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 72</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 73</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 74</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 75</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 76</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 77</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 78</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 79</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 80</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 81</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 82</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 83</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 84</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 85</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 86</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 87</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 88</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 89</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 90</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 91</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 92</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 93</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 94</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 95</valve>
+        <valve duration = "15">Wash Buffer</valve>
+        <valve duration = "15">Set Hyb 96</valve>
+        <valve duration = "15">Wash Buffer</valve>
+	    <pump duration = "10">Stop Flow</pump>
+     </protocol>
+
+   </kilroy_protocols>
+
+</kilroy_configuration>

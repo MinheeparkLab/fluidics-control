@@ -21,8 +21,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from valves.valveChain import ValveChain
 from pumps.pumpControl import PumpControl
 from kilroyProtocols import KilroyProtocols
-from storm_control.sc_library.tcpServer import TCPServer   # get these from storm control
-import storm_control.sc_library.parameters as params
+from sc_library.tcpServer import TCPServer   # get these from storm control
+import sc_library.parameters as params
 
 # ----------------------------------------------------------------------------------------
 # Kilroy Class Definition

@@ -11,7 +11,7 @@ Hazen 05/14
 
 from PyQt5 import QtCore, QtNetwork
 
-from storm_control.sc_library.tcpMessage import TCPMessage
+from sc_library.tcpMessage import TCPMessage
 
 
 class TCPCommunicationsMixin(object):

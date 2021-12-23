@@ -38,7 +38,7 @@ class ValveChain(QtWidgets.QWidget):
                  num_simulated_valves = 0,
                  usb_cnc = 'GRBL',
                  plate_layout = './valves/XYZ_layout.json',
-                 valve_type = 'Hamilton',   
+                 valve_type = 'Simulated',   
                  verbose = False
                  ):   # note Hamilton is still the default, should change to 'none', but needs debugging
                  #  in it's most general form, Kilroy should allow valves and robot needles
@@ -60,7 +60,7 @@ class ValveChain(QtWidgets.QWidget):
         print(valve_type)
         if valve_type == 'Simulated' or num_simulated_valves > 0:
             print('simulating valves')
-            self.valve_chain = HamiltonMVP(#com_port = 0,
+            self.valve_chain = HamiltonMVP(com_port = 0,
 				   num_simulated_valves = num_simulated_valves,
 				   verbose = self.verbose)
 
@@ -117,7 +117,7 @@ class ValveChain(QtWidgets.QWidget):
             if port_ID == None:
                 port_ID = self.valve_widgets[valve_ID].getPortIndex()
             rotation_direction = self.valve_widgets[valve_ID].getDesiredRotationIndex()
-        else:
+        else:   # for CNC only
             if port_ID == None:
                 port_ID = self.valve_widgets[-1].getPortIndex()
             rotation_direction = self.valve_widgets[-1].getDesiredRotationIndex()
@@ -264,11 +264,11 @@ class StandAlone(QtWidgets.QMainWindow):
 
 
         # scroll area widget contents - layout
-        self.valve_chain = ValveChain(com_port = '/dev/cu.usbserial-14420', #2,
+        self.valve_chain = ValveChain(com_port = 'COM7', #2,
                                       verbose = True,
                                       valve_type='None',
-                                      usb_cnc = 'GRBL',)
-                                      #num_simulated_valves = 2)
+                                      usb_cnc = 'GRBL',
+                                      num_simulated_valves = 2)
         
         # central widget
         self.centralWidget = QtWidgets.QWidget()
