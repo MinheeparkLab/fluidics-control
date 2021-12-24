@@ -29,7 +29,8 @@ class KilroyProtocols(QtWidgets.QMainWindow):
     command_ready_signal = QtCore.pyqtSignal() # A command is ready to be issued
     status_change_signal = QtCore.pyqtSignal() # A protocol status change occured
     completed_protocol_signal = QtCore.pyqtSignal(object) # Name of completed protocol
-        
+    change_protocol_signal = QtCore.pyqtSignal()
+
     def __init__(self,
                  protocol_xml_path = "default_config.xml",
                  command_xml_path = "default_config.xml",
@@ -47,6 +48,7 @@ class KilroyProtocols(QtWidgets.QMainWindow):
         self.status = [-1, -1] # Protocol ID, command ID within protocol
         self.issued_command = []
         self.received_message = None
+        self.totalDuration = 0
 
         print("----------------------------------------------------------------------")
         
@@ -94,9 +96,11 @@ class KilroyProtocols(QtWidgets.QMainWindow):
             command_name = self.protocol_commands[protocol_ID][command_ID]
             command_duration = self.protocol_durations[protocol_ID][command_ID]
             self.status = [protocol_ID, command_ID]
+            self.elapsed_timer.start()
+
             self.issueCommand(command_name, command_duration)
 
-            self.elapsed_timer.start()
+            #self.elapsed_timer.start()
 
             self.protocolDetailsList.setCurrentRow(command_ID)
         else:
@@ -127,6 +131,9 @@ class KilroyProtocols(QtWidgets.QMainWindow):
         self.elapsedTimeLabel = QtWidgets.QLabel()
         self.elapsedTimeLabel.setText("Elapsed Time: ")
 
+        self.totalDurationLabel = QtWidgets.QLabel()
+        self.totalDurationLabel.setText("Total Protocol Duration:")
+
         self.protocolDetailsList = QtWidgets.QListWidget()
         
         self.startProtocolButton = QtWidgets.QPushButton("Start Protocol")
@@ -143,6 +150,7 @@ class KilroyProtocols(QtWidgets.QMainWindow):
         self.mainWidgetLayout.addWidget(self.fileLabel)
         self.mainWidgetLayout.addWidget(self.protocolListWidget)
         self.mainWidgetLayout.addWidget(self.elapsedTimeLabel)
+        self.mainWidgetLayout.addWidget(self.totalDurationLabel)
         self.mainWidgetLayout.addWidget(self.protocolDetailsList)
         self.mainWidgetLayout.addWidget(self.startProtocolButton)
         self.mainWidgetLayout.addWidget(self.skipCommandButton)
@@ -190,7 +198,7 @@ class KilroyProtocols(QtWidgets.QMainWindow):
     # ------------------------------------------------------------------------------------                                        
     def getProtocolByName(self, command_name):
         try:
-            command_ID = self.command_names.index(command_name)
+            command_ID = self.protocol_names.index(command_name)
             return self.commands[command_ID]
         except:
             print("Did not find " + command_name)
@@ -216,10 +224,10 @@ class KilroyProtocols(QtWidgets.QMainWindow):
                 text += ": " + str(command_duration) + " s"
             print(text)
             
-        self.command_ready_signal.emit()
-
         if command_duration >= 0:
-            self.protocol_timer.start(command_duration*1000)
+            self.protocol_timer.start(command_duration*1000)        
+
+        self.command_ready_signal.emit()
 
     # ------------------------------------------------------------------------------------
     # Handle Issue Command Request from Pump Commands
@@ -390,12 +398,12 @@ class KilroyProtocols(QtWidgets.QMainWindow):
         if self.verbose:
             print("Starting " + self.protocol_names[protocol_ID])
 
-        # Issue command signal
-        self.issueCommand(command_data, command_duration)
-        
         # Start elapsed time timer
         self.elapsed_timer.start()
         self.poll_elapsed_time_timer.start()
+
+        # Issue command signal
+        self.issueCommand(command_data, command_duration)
 
         # Change enable status of GUI items
         self.startProtocolButton.setEnabled(False)
@@ -434,8 +442,8 @@ class KilroyProtocols(QtWidgets.QMainWindow):
     # ------------------------------------------------------------------------------------
     # Initialize and start a protocol specified by a TCP message
     # ------------------------------------------------------------------------------------
-    def startProtocolRemotely(self, message):
-        protocol_name = message.getData("name")
+    def startProtocolRemotely(self, message, protocol_name):
+        #protocol_name = message.getData("name")
         if self.isValidProtocol(protocol_name):
             if self.isRunningProtocol():
                 if self.verbose:
@@ -457,7 +465,6 @@ class KilroyProtocols(QtWidgets.QMainWindow):
         # Get name of current protocol
         if self.status[0] >= 0:
             if self.verbose: print("Stopped Protocol")
-            self.completed_protocol_signal.emit(self.received_message)
         
         # Reset status and emit status change signal
         self.status = [-1,-1]
@@ -485,6 +492,9 @@ class KilroyProtocols(QtWidgets.QMainWindow):
         # Stop timers
         self.poll_elapsed_time_timer.stop()
         self.elapsedTimeLabel.setText("Elapsed Time:")
+        
+        # transfer stop signal
+        self.completed_protocol_signal.emit(self.received_message)
 
     # ------------------------------------------------------------------------------------
     # Display time elapsed since previous command was issued
@@ -524,16 +534,20 @@ class KilroyProtocols(QtWidgets.QMainWindow):
         current_protocol_durations = self.protocol_durations[protocol_ID]
 
         self.protocolDetailsList.clear()
+        self.totalduration = 0
         for ID in range(len(current_protocol_commands)):
             text_string = current_protocol_commands[ID][0]
             text_string += ": "
             text_string += current_protocol_commands[ID][1]
             text_string += ": "
             text_string += str(current_protocol_durations[ID]) + " s"
+            self.totalduration += int(current_protocol_durations[ID])
 
             wid = QtWidgets.QListWidgetItem(text_string)
             wid.setFlags(wid.flags() & QtCore.Qt.ItemIsSelectable)
             self.protocolDetailsList.insertItem(ID, wid)
+        self.totalDurationLabel.setText(f'Total Protocol Duration : {self.totalduration} s')
+
 
 # ----------------------------------------------------------------------------------------
 # Stand Alone Test Class

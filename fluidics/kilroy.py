@@ -12,6 +12,8 @@
 # Import
 # ----------------------------------------------------------------------------------------
 import imp
+
+
 imp.load_source("setPath", "../sc_library/setPath.py")
 
 import sys
@@ -21,8 +23,11 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from valves.valveChain import ValveChain
 from pumps.pumpControl import PumpControl
 from kilroyProtocols import KilroyProtocols
+from kilroyHyperProtocols import KilroyHyperProtocols
 from sc_library.tcpServer import TCPServer   # get these from storm control
 import sc_library.parameters as params
+
+__version__ = "1.1.1"
 
 # ----------------------------------------------------------------------------------------
 # Kilroy Class Definition
@@ -59,6 +64,11 @@ class Kilroy(QtWidgets.QMainWindow):
             self.commands_file = "default_config.xml"
         else:
             self.commands_file = parameters.get("commands_file")
+
+        if not "hyperprotocol_path" in parameters.parameters:
+            self.hyperprotocol_path = "protocols"
+        else:
+            self.hyperprotocol_path = parameters.get("hyperprotocol_path")
             
         if not "simulate_pump" in parameters.parameters:
             self.simulate_pump = False
@@ -94,13 +104,25 @@ class Kilroy(QtWidgets.QMainWindow):
         self.pumpControl = PumpControl(parameters = parameters)
                                        
         # Create KilroyProtocols instance and connect signals
+        self.kilroyHyperProtocols = KilroyHyperProtocols(hyperprotocol_path = self.hyperprotocol_path,
+                                                         protocol_xml_path = self.protocols_file,
+                                                         command_xml_path = self.commands_file,
+                                                         verbose = self.verbose)
+        """
         self.kilroyProtocols = KilroyProtocols(protocol_xml_path = self.protocols_file,
                                                command_xml_path = self.commands_file,
                                                verbose = self.verbose)
 
+
+
         self.kilroyProtocols.command_ready_signal.connect(self.sendCommand)
         self.kilroyProtocols.status_change_signal.connect(self.handleProtocolStatusChange)
         self.kilroyProtocols.completed_protocol_signal.connect(self.handleProtocolComplete)
+        """
+
+        self.kilroyHyperProtocols.command_ready_signal.connect(self.sendCommand)
+        self.kilroyHyperProtocols.status_change_signal.connect(self.handleProtocolStatusChange)
+        self.kilroyHyperProtocols.completed_protocol_signal.connect(self.handleProtocolComplete)
 
         # Create Kilroy TCP Server and connect signals
         self.tcpServer = TCPServer(port = self.tcp_port,
@@ -116,7 +138,7 @@ class Kilroy(QtWidgets.QMainWindow):
     # Close
     # ----------------------------------------------------------------------------------------
     def close(self):
-        self.kilroyProtocols.close()
+        self.kilroyHyperProtocols.close()
         self.tcpServer.close()
         self.valveChain.close()
         self.pumpControl.close()
@@ -127,18 +149,19 @@ class Kilroy(QtWidgets.QMainWindow):
     # ----------------------------------------------------------------------------------------
     def createGUI(self):
         self.mainLayout = QtWidgets.QGridLayout()
-        self.mainLayout.addWidget(self.kilroyProtocols.mainWidget, 0, 0, 2, 2)
-        self.mainLayout.addWidget(self.kilroyProtocols.valveCommands.mainWidget, 2, 0, 1, 1)
-        self.mainLayout.addWidget(self.kilroyProtocols.pumpCommands.mainWidget, 2, 1, 1, 1)
+        self.mainLayout.addWidget(self.kilroyHyperProtocols.kilroyProtocols.mainWidget, 0, 0, 2, 2)
+        self.mainLayout.addWidget(self.kilroyHyperProtocols.kilroyProtocols.valveCommands.mainWidget, 2, 0, 1, 1)
+        self.mainLayout.addWidget(self.kilroyHyperProtocols.kilroyProtocols.pumpCommands.mainWidget, 2, 1, 1, 1)
         self.mainLayout.addWidget(self.valveChain.mainWidget, 0, 2, 2, 2)
         self.mainLayout.addWidget(self.pumpControl.mainWidget, 0, 4, 2, 1)
+        self.mainLayout.addWidget(self.kilroyHyperProtocols.mainWidget, 2, 2, 1, 4)
         #self.mainLayout.addWidget(self.tcpServer.mainWidget, 2, 2, 1, 4)
 
     # ----------------------------------------------------------------------------------------
     # Redirect protocol status change from kilroyProtocols to valveChain
     # ----------------------------------------------------------------------------------------
     def handleProtocolStatusChange(self):
-        status = self.kilroyProtocols.getStatus()
+        status = self.kilroyHyperProtocols.kilroyProtocols.getStatus()
         if status[0] >= 0: # Protocol is running
             self.valveChain.setEnabled(False)
             self.pumpControl.setEnabled(False)
@@ -163,24 +186,24 @@ class Kilroy(QtWidgets.QMainWindow):
         if not message.getType() == "Kilroy Protocol":
             message.setError(True, "Wrong message type sent to Kilroy: " + message.getType())
             self.tcpServer.sendMessage(message)
-        elif not self.kilroyProtocols.isValidProtocol(message.getData("name")):
+        elif not self.kilroyHyperProtocols.kilroyProtocols.isValidProtocol(message.getData("name")):
             message.setError(True, "Invalid Kilroy Protocol")
             self.tcpServer.sendMessage(message)
         elif message.isTest():
-            required_time = self.kilroyProtocols.requiredTime(message.getData("name"))
+            required_time = self.kilroyHyperProtocols.kilroyProtocols.requiredTime(message.getData("name"))
             message.addResponse("duration", required_time)
             self.tcpServer.sendMessage(message)
         else: # Valid, non-test message                                    
             # Keep track of valid messages issued via TCP 
             self.received_message = message
             # Start the protocol
-            self.kilroyProtocols.startProtocolRemotely(message)
+            self.kilroyHyperProtocols.kilroyProtocols.startProtocolRemotely(message)
             
     # ----------------------------------------------------------------------------------------
     # Redirect commands from kilroy protocol class to valves or pump
     # ----------------------------------------------------------------------------------------
     def sendCommand(self):
-        command_data = self.kilroyProtocols.getCurrentCommand()
+        command_data = self.kilroyHyperProtocols.kilroyProtocols.getCurrentCommand()
         if command_data[0] == "valve":
             self.valveChain.receiveCommand(command_data[1])
         elif command_data[0] == "pump":
@@ -224,7 +247,7 @@ class StandAlone(QtWidgets.QMainWindow):
         # Add menu items
         menubar = self.menuBar()
         file_menu = menubar.addMenu("&File")
-        for menu_item in self.kilroy.kilroyProtocols.menu_items[0]:
+        for menu_item in self.kilroy.kilroyHyperProtocols.menu_items[0]:
             file_menu.addAction(menu_item)
         file_menu.addAction(exit_action)
 
@@ -246,7 +269,7 @@ class StandAlone(QtWidgets.QMainWindow):
     # ----------------------------------------------------------------------------------------
     def dropEvent(self, event):
         for url in event.mimeData().urls():
-            self.kilroy.kilroyProtocols.loadFullConfiguration(xml_file_path = str(url.path())[1:])
+            self.kilroy.kilroyHyperProtocols.kilroyProtocols.loadFullConfiguration(xml_file_path = str(url.path())[1:])
 
     # ----------------------------------------------------------------------------------------
     # Handle close event

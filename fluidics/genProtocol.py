@@ -87,6 +87,10 @@ class genProtocol():
         
         name = "protocols/" + name
 
+        if os.path.isfile(name):
+            os.remove(name)
+            print(f'MESSAGE -- file {name} already exists. Overrided...')
+
         assert self.hybelist and len(self.hybelist) == self.num_hybes
 
         new_protocol_name = name.split("/")[1].split('.xml')[0]
@@ -118,7 +122,7 @@ class genProtocol():
         elementTree.ElementTree(root).write(name)
 
     def indent(self,elem, level=0):
-        i = '\n' + level*"  "
+        i = '\n\n' + level*"  "
         if len(elem):
             if not elem.text or not elem.text.strip():
                 elem.text = i + "  "
