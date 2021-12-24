@@ -2,9 +2,11 @@
 stand alone controller of automated fluid handling system.
 
 # Kilroy for MinheeparkLab
-This version of kilroy is for minheepark lab ORCA-setup.
+Kilroy is a controller code for a series of automated flow protocols written by Jeff Moffitt and Alistair Boettiger
 
-In our lab, we use Nikon Inverted ImageExFluorer All-in-one microscopy setup. Thus, connection part to Steve and Dave in Kilroy is not necessary.
+This version of kilroy is for minheepark Lab ORCA-setup.
+
+We use Nikon Inverted ImageExFluorer All-in-one microscopy setup. Thus, connection part to Steve and Dave in Kilroy is not necessary; A new scriptmaker is needed for synchronize Nikon and Microfluidics.
 
 Kilroy for minheeparkLab manages protocols by generating hyperprotocol, which is a combination of hybridize protocols and imaging waiting block.
 
