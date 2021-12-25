@@ -222,22 +222,26 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         for hybe in self.hybelist:
             hybename = 'Hybridize ' + str(hybe)
             new_protocols.append(hybename)
-            new_durations.append(self.protocol_durations[self.protocol_names.index(hybename)])
+            try:
+                new_durations.append(self.protocol_durations[self.protocol_names.index(hybename)])
+            except ValueError:
+                warnings.warn('Not Valid protocol')
+                return
             protocol = elementTree.SubElement(kilroy_hyperprotocol,'protocol',{'name':hybename})
             
             imagingDuration = str(self.imagingDuration).rjust(4,'0')
             thou, hund, tens, ones = imagingDuration[:-3], imagingDuration[-3], imagingDuration[-2], imagingDuration[-1]
             
             def __appendWait(count, deci):
-                for i in range(count):
+                for i in range(int(count)):
                     elementTree.SubElement(kilroy_hyperprotocol,'protocol',{'name':'Wait Microscopy ' + str(deci)})
                     new_protocols.append(f"Wait Microscopy {deci}")
                     new_durations.append(deci)
             
-            __appendWait(thou)
-            __appendWait(hund)
-            __appendWait(tens)
-            __appendWait(ones)
+            __appendWait(thou,1000)
+            __appendWait(hund,100)
+            __appendWait(tens,10)
+            __appendWait(ones,1)
 
         def _indent(elem, level=0):
             i = '\n\n' + level*"  "
@@ -267,7 +271,6 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         self.hyperprotocol_names.append(name)
         self.hyperprotocol_protocols.append(new_protocols)
         self.hyperprotocol_durations.append(new_durations)
-        print(self.hyperprotocol_protocols)
         self.updateGUI()
 
         #self.loadHyperProtocols(self.hyperprotocol_xml_path)
@@ -524,26 +527,25 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         try:
             tmp1 = [int(ele) for ele in self.hybelist]
             tmp2 = [int(ele) for ele in self.ignorelist]
-            
         except ValueError:
-            for ind, hybe in enumerate(self.hybelist):
-                st, end = hybe.split('-')[0], hybe.split('-')[-1]
-                if st!=end:
-                    e = self.hybelist.pop(ind)
-                    assert '-' in e
-                    self.hybelist.extend([i for i in range(int(st), int(end) + 1)])
-            self.hybelist = list(np.int32(self.hybelist))
+            try:
+                for ind, hybe in enumerate(self.hybelist):
+                    st, end = hybe.split('-')[0], hybe.split('-')[-1]
+                    if st!=end:
+                        e = self.hybelist.pop(ind)
+                        assert '-' in e
+                        self.hybelist.extend([str(i) for i in range(int(st), int(end) + 1)])
 
-            for ind, hybe in enumerate(self.ignorelist):
-                st, end = hybe.split('-')[0], hybe.split('-')[-1]
-                if st!=end:
-                    e = self.ignorelist.pop(ind)
-                    assert '-' in e
-                    self.ignorelist.extend([i for i in range(int(st), int(end) + 1)])
-            self.ignorelist = list(np.int32(self.ignorelist))
-            
-        except ValueError:
-            return
+                tmp1 = list(np.int32(self.hybelist))
+                for ind, hybe in enumerate(self.ignorelist):
+                    st, end = hybe.split('-')[0], hybe.split('-')[-1]
+                    if st!=end:
+                        e = self.ignorelist.pop(ind)
+                        assert '-' in e
+                        self.ignorelist.extend([str(i) for i in range(int(st), int(end) + 1)])
+                tmp2 = list(np.int32(self.ignorelist))
+            except ValueError:
+                return
 
         if len(tmp1) == 1:
             self.hybelist = [i+1 for i in range(tmp1[0])]

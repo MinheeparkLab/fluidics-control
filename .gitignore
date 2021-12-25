@@ -84,3 +84,5 @@ proguard/
 # Metadata
 .metadata
 
+# generated protocols
+fluidics/protocols/*
