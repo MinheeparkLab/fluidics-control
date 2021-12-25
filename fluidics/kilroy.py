@@ -27,7 +27,7 @@ from kilroyHyperProtocols import KilroyHyperProtocols
 from sc_library.tcpServer import TCPServer   # get these from storm control
 import sc_library.parameters as params
 
-__version__ = "1.1.1"
+__version__ = "1.1.2"
 
 # ----------------------------------------------------------------------------------------
 # Kilroy Class Definition

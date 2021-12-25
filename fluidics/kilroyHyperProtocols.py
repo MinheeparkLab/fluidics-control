@@ -14,7 +14,9 @@ To synchronize with Nikon Inverted Microscope we use, Hyperprotocol follows thes
 
 Code written by : Han, manhyuk (manhyukhan@kaist.ac.kr) 12/23/2021
 """
-
+# ----------------------------------------------------------------------------------------
+# Import
+# ----------------------------------------------------------------------------------------
 import sys
 import os
 import time
@@ -26,7 +28,9 @@ from kilroyProtocols import KilroyProtocols
 
 __standAlone = False
 
-# Class Definition
+# ----------------------------------------------------------------------------------------
+# Kilroy Class Definition
+# ----------------------------------------------------------------------------------------
 class KilroyHyperProtocols(QtWidgets.QMainWindow):
 
     protocol_ready_signal = QtCore.pyqtSignal()
@@ -86,8 +90,10 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         self.hyper_poll_elapsed_time_timer = QtCore.QTimer()
         self.hyper_poll_elapsed_time_timer.setInterval(1000)
         self.hyper_poll_elapsed_time_timer.timeout.connect(self.updateElapsedTime)
-
+        
+    # ----------------------------------------------------------------------------------------
     # Advance the hyperprotocol to the next protocol and issue it
+    # ----------------------------------------------------------------------------------------
     def advanceHyperProtocol(self):
         status = self.status
         hyperprotocol_ID = self.status[0]
@@ -105,13 +111,17 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         else:
             self.stopHyperProtocol()
 
+    # ----------------------------------------------------------------------------------------
     # Close
+    # ----------------------------------------------------------------------------------------
     def close(self):
         self.stopHyperProtocol()
         if self.verbose: print("Closing hyperprotocol")
         self.kilroyProtocols.close()
 
+    # ----------------------------------------------------------------------------------------
     # Create display and control widgets
+    # ----------------------------------------------------------------------------------------
     def createGUI(self):
 
         self.mainWidget = QtWidgets.QGroupBox()
@@ -187,6 +197,9 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         # Disable buttons
         self.stopHyperProtocolButton.setEnabled(False)
 
+    # ----------------------------------------------------------------------------------------
+    # generate hyperprotocol
+    # ----------------------------------------------------------------------------------------
     def generateHyperProtocol(self):
         """
         generate hyperprotocol by using hybelist, self.imagingDuration and hyperprotocol_xml_path
@@ -211,12 +224,20 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
             new_protocols.append(hybename)
             new_durations.append(self.protocol_durations[self.protocol_names.index(hybename)])
             protocol = elementTree.SubElement(kilroy_hyperprotocol,'protocol',{'name':hybename})
-            count = self.imagingDuration // 30
             
-            for i in range(count):
-                elementTree.SubElement(kilroy_hyperprotocol,'protocol',{'name':'Wait Microscopy'})
-                new_protocols.append("Wait Microscopy")
-                new_durations.append(30)
+            imagingDuration = str(self.imagingDuration).rjust(4,'0')
+            thou, hund, tens, ones = imagingDuration[:-3], imagingDuration[-3], imagingDuration[-2], imagingDuration[-1]
+            
+            def __appendWait(count, deci):
+                for i in range(count):
+                    elementTree.SubElement(kilroy_hyperprotocol,'protocol',{'name':'Wait Microscopy ' + str(deci)})
+                    new_protocols.append(f"Wait Microscopy {deci}")
+                    new_durations.append(deci)
+            
+            __appendWait(thou)
+            __appendWait(hund)
+            __appendWait(tens)
+            __appendWait(ones)
 
         def _indent(elem, level=0):
             i = '\n\n' + level*"  "
@@ -236,6 +257,7 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         kilroy_hyperprotocols.append(kilroy_hyperprotocol)
         xml_tree.append(kilroy_hyperprotocols)
         _indent(xml_tree)
+        
         if os.path.isfile(self.hyperprotocol_xml_path):
             warnings.warn('Override exist hyperprotocol')
             os.remove(self.hyperprotocol_xml_path)
@@ -249,7 +271,7 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         self.updateGUI()
 
         #self.loadHyperProtocols(self.hyperprotocol_xml_path)
-
+        
     def getCurrentProtocol(self):
         return self.issued_protocol
 
@@ -265,10 +287,12 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
     def handleProtocolComplete(self):
         pass
 
+    # ----------------------------------------------------------------------------------------
     # Issue a protocol: load current protocol, send protol ready sig
+    # ----------------------------------------------------------------------------------------
     def issueProtocol(self, protocol_data, protocol_duration = -1):
-        if protocol_data == "Wait Microscopy":
-            self.issued_protocol = "Wait Microscopy"
+        if "Wait Microscopy" in protocol_data:
+            self.issued_protocol = protocol_data
         elif "Hybridize" in protocol_data:
             self.issued_protocol = protocol_data
         else:
@@ -286,7 +310,9 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
 
         self.kilroyProtocols.startProtocolByName(protocol_name=self.issued_protocol)
 
+    # ----------------------------------------------------------------------------------------
     # Check to see if hyperprotocol name is in the list of hyperprotocols
+    # ----------------------------------------------------------------------------------------
     def isValidHyperProtocol(self, hyperprotocol_name):
         try:
             self.hyperprotocol_names.index(hyperprotocol_name)
@@ -299,7 +325,9 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
     def isRunningHyperProtocol(self):
         return self.status[0] >= 0
     
+    # ----------------------------------------------------------------------------------------
     # Load a protocol xml file
+    # ----------------------------------------------------------------------------------------
     def loadHyperProtocols(self, hyperprotocol_path = ''):
         if not hyperprotocol_path:
             hyperprotocol_path = QtWidgets.QFileDialog.getOpenFileName(self, "Open File", "\home")[0]
@@ -315,7 +343,9 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         if self.verbose:
             self.printHyperProtocols()
 
+    # ----------------------------------------------------------------------------------------
     # Parse loaded xml file: load hyperprotocols
+    # ----------------------------------------------------------------------------------------
     def parseHyperProtocolXML(self):
         try:
             print("Parsing for hyperprotocols: " + self.hyperprotocol_xml_path)
@@ -352,7 +382,9 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         self.num_hyperprotocols = len(self.hyperprotocol_names)
         print(len(self.hyperprotocol_names),len(self.hyperprotocol_durations),self.num_hyperprotocols)
 
+    # ----------------------------------------------------------------------------------------
     # Display loaded hyperprotocols
+    # ----------------------------------------------------------------------------------------
     def printHyperProtocols(self):
         print("Current hyperprotocols: ")
 
@@ -372,8 +404,9 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         
         return total_time
 
-
+    # ----------------------------------------------------------------------------------------
     # Initialize and start a hyperprotocol
+    # ----------------------------------------------------------------------------------------
     def startHyperProtocol(self):
         hyperprotocol_ID = self.hyperprotocolListWidget.currentRow()
 
@@ -407,8 +440,10 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
 
     def startHyperProtocolLocally(self):
         self.startHyperProtocol()
-
+        
+    # ----------------------------------------------------------------------------------------
     # Stop a running hyperprotocol either or completion or early
+    # ----------------------------------------------------------------------------------------
     def stopHyperProtocol(self):
         # Get name of current hyperprotocol
         if self.status[0] >= 0:
@@ -483,15 +518,33 @@ class KilroyHyperProtocols(QtWidgets.QMainWindow):
         hybestring = self.hybeList.text()
         ignorestring = self.ignoreHybeList.text()
 
-        self.hybelist = list()
-        self.ignorelist = list()
+        self.hybelist = hybestring.strip().split()
+        self.ignorelist = ignorestring.strip().split()
 
         try:
-            tmp1 = [int(ele) for ele in hybestring.strip().split()]
-            tmp2 = [int(ele) for ele in ignorestring.strip().split()]
+            tmp1 = [int(ele) for ele in self.hybelist]
+            tmp2 = [int(ele) for ele in self.ignorelist]
+            
+        except ValueError:
+            for ind, hybe in enumerate(self.hybelist):
+                st, end = hybe.split('-')[0], hybe.split('-')[-1]
+                if st!=end:
+                    e = self.hybelist.pop(ind)
+                    assert '-' in e
+                    self.hybelist.extend([i for i in range(int(st), int(end) + 1)])
+            self.hybelist = list(np.int32(self.hybelist))
+
+            for ind, hybe in enumerate(self.ignorelist):
+                st, end = hybe.split('-')[0], hybe.split('-')[-1]
+                if st!=end:
+                    e = self.ignorelist.pop(ind)
+                    assert '-' in e
+                    self.ignorelist.extend([i for i in range(int(st), int(end) + 1)])
+            self.ignorelist = list(np.int32(self.ignorelist))
+            
         except ValueError:
             return
-        
+
         if len(tmp1) == 1:
             self.hybelist = [i+1 for i in range(tmp1[0])]
         else:

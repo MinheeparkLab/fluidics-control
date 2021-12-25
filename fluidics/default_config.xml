@@ -3542,9 +3542,27 @@
 
     </protocol>
 
-    <protocol name="Wait Microscopy">
+    <protocol name="Wait Microscopy 1000">
 
-      <pump duration="30">Stop Flow</pump>
+      <pump duration="1000">Stop Flow</pump>
+    
+    </protocol>
+
+    <protocol name="Wait Microscopy 100">
+
+      <pump duration="100">Stop Flow</pump>
+    
+    </protocol>
+
+    <protocol name="Wait Microscopy 10">
+
+      <pump duration="10">Stop Flow</pump>
+    
+    </protocol>
+
+    <protocol name="Wait Microscopy 1">
+
+      <pump duration="1">Stop Flow</pump>
     
     </protocol>
 
