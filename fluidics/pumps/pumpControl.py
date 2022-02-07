@@ -27,15 +27,15 @@ class PumpControl(QtWidgets.QWidget):
         QtWidgets.QWidget.__init__(self, parent)
 
         # Define internal attributes
-        #self.com_port = parameters.get("pump_com_port")
-        self.pump_ID = parameters.get("pump_id", 30)
+        self.com_port = parameters.get("pump_com_port")
+        self.pump_ID = parameters.get("pump_ID", 30)
         self.simulate = parameters.get("simulate_pump", True)
         self.verbose = parameters.get("verbose", True)
         self.status_repeat_time = 2000
         self.speed_units = "rpm"
 
         # Dynamic import of pump class
-        pump_module = importlib.import_module(parameters.get("pump_class", "pumps.rainin_rp1"))
+        pump_module = importlib.import_module(parameters.get("pump_class", "pumps.gilson_mp3"))
 
         # Create Instance of Pump
         self.pump = pump_module.APump(parameters = parameters)
@@ -208,14 +208,14 @@ class StandAlone(QtWidgets.QMainWindow):
         super(StandAlone, self).__init__(parent)
 
         # scroll area widget contents - layout
-        self.pump = PumpControl(com_port = 4,
-                                pump_ID = 30,
-                                simulate = False,
-                                verbose = False)
+        self.pump = PumpControl(parameters={'pump_com_port' : 'COM11',
+                                'pump_ID' : 30,
+                                'simulate_pump' : False,
+                                'verbose' : False})
 
         # central widget
-        self.centralWidget = QtGui.QWidget()
-        self.mainLayout = QtGui.QVBoxLayout(self.centralWidget)
+        self.centralWidget = QtWidgets.QWidget()
+        self.mainLayout = QtWidgets.QVBoxLayout(self.centralWidget)
         self.mainLayout.addWidget(self.pump.mainWidget)
         
         # set central widget
@@ -231,7 +231,7 @@ class StandAlone(QtWidgets.QMainWindow):
         menubar = self.menuBar()
         file_menu = menubar.addMenu("File")
 
-        exit_action = QtGui.QAction("Exit", self)
+        exit_action = QtWidgets.QAction("Exit", self)
         exit_action.setShortcut("Ctrl+Q")
         exit_action.triggered.connect(self.closeEvent)
 
